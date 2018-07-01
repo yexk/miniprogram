@@ -1,12 +1,47 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
+    "pages/user/user",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+  "window": {
+    "backgroundTextStyle": "black",
+    "navigationBarBackgroundColor": "#f8f8f8",
     "navigationBarTitleText": "晓助手125",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#179B16",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/assets/imgs/home.png",
+        "selectedIconPath": "/assets/imgs/select_home.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "搜索"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "晓工具",
+        "iconPath": "/assets/imgs/tool.png",
+        "selectedIconPath": "/assets/imgs/select_tool.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "/assets/imgs/user.png",
+        "selectedIconPath": "/assets/imgs/select_user.png"
+      }
+    ]
   }
 }
