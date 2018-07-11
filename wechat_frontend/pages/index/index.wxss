@@ -19,3 +19,8 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.weui-tab__content{
+    padding-top: 60px;
+    text-align: center;
+}

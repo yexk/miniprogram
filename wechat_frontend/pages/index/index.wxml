@@ -1,13 +1,75 @@
-<!--index.wxml-->
 <view class="page">
-    <view class="page__hd">
-        <view class="page__title">Button</view>
-        <view class="page__desc">按钮，WeUI采用小程序原生的按钮为主体，加入一些间距的样式。</view>
+<!--index.wxml-->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="index">
+            <swiper-item>
+                <navigator url="/pages/user/user" open-type="switchTab" hover-class="other-navigator-hover">
+                    <image src="{{item}}" class="slide-image" width="355" height="150" />
+                </navigator>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="page">
+        <view class="page__bd">
+            <view class="weui-tab">
+                <view class="weui-navbar">
+                    <block wx:for="{{tabs}}" wx:key="*this">
+                        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                            <view class="weui-navbar__title"><i class="ye-icon wechat-fill"></i>{{item}}</view>
+                        </view>
+                    </block>
+                    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+                </view>
+                <view class="weui-tab__panel">
+                    <view class="weui-tab__content" hidden="{{activeIndex != 0}}"> 选项一的内容</view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__hd">图文组合列表</view>
+            <view class="weui-panel__bd">
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="{{icon60}}" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">标题一</view>
+                        <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
+                    </view>
+                </navigator>
+                <navigator url="/" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="{{icon60}}" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">标题二</view>
+                        <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
     </view>
     <view class="page__bd page__bd_spacing">
-        <button class="weui-btn" type="primary" >获取用户信息</button>
+        <button type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+        <form bindsubmit="formSubmit" bindreset="formReset">
+            <view class="section section_gap">
+                <view class="section__title">switch</view>
+                <switch name="switch" />
+            </view>
+            <view class="section section_gap">
+                <view class="section__title">slider</view>
+                <slider name="slider" show-value></slider>
+            </view>
+        </form>
+        <button class="weui-btn" type="primary" ><i class="ye-icon google"></i>获取用户信息</button>
         <button class="weui-btn" type="primary" disabled="true">页面主操作 Disabled</button>
-        
+        <navigator url="/pages/user/user" hover-class="navigator-hover">跳转到新页面</navigator>
+        <navigator url="/pages/user/user" open-type="switchTab" hover-class="other-navigator-hover">切换 Tab</navigator>
+
         <button class="weui-btn" type="default">页面次要操作 Normal</button>
         <button class="weui-btn" type="default" disabled="true">页面次要操作 Disabled</button>
 
@@ -25,5 +87,6 @@
             <button class="weui-btn mini-btn" type="default" size="mini">按钮</button>
             <button class="weui-btn mini-btn" type="warn" size="mini">按钮</button>
         </view>
+
     </view>
 </view>

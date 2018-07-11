@@ -14,6 +14,7 @@
                       <open-data type="userCountry" lang="zh_CN"></open-data> - 
                       <open-data type="userProvince" lang="zh_CN"></open-data> - 
                       <open-data type="userCity" lang="zh_CN"></open-data>
+                      <i class="iconfont icon-xxx"></i>
                     </view>
                 </view>
             </navigator>
@@ -24,5 +25,6 @@
         {{aa.code}}:
         {{aa.data}}:
         {{aa.msg}}
+        <i class="fa fa-address-book-o" aria-hidden="true"></i>
     </view>
 </view>

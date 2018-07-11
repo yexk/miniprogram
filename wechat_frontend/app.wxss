@@ -1,6 +1,7 @@
 /**app.wxss**/
+@import "assets/css/icon.wxss";
 @import "assets/css/weui.wxss";
-@import "assets/css/font-awesome.min.wxss";
+@import "assets/css/common.wxss";
 
 page{
     background-color: #F8F8F8;

@@ -24,7 +24,9 @@
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "分类"
+        "text": "分类",
+        "iconPath": "/assets/imgs/cate.png",
+        "selectedIconPath": "/assets/imgs/select_cate.png"
       },
       {
         "pagePath": "pages/logs/logs",
