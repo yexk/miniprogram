@@ -1,2 +1,4 @@
 wecaht_frontend/project.config.json
 .vscode/settings.json
+admin/package-lock.json
+dist/
