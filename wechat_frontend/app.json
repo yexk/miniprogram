@@ -2,10 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/user/user",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/cate/index",
+    "pages/index/detail/detail"
   ],
   "window": {
-    "backgroundTextStyle": "black",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#f8f8f8",
     "navigationBarTitleText": "晓助手125",
     "navigationBarTextStyle": "black",
@@ -23,14 +25,16 @@
         "selectedIconPath": "/assets/imgs/select_home.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/cate/index",
         "text": "分类",
         "iconPath": "/assets/imgs/cate.png",
         "selectedIconPath": "/assets/imgs/select_cate.png"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "搜索"
+        "text": "搜索",
+        "iconPath": "/assets/imgs/search.png",
+        "selectedIconPath": "/assets/imgs/select_search.png"
       },
       {
         "pagePath": "pages/logs/logs",
@@ -45,5 +49,25 @@
         "selectedIconPath": "/assets/imgs/select_user.png"
       }
     ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "i-button": "./components/iview/button/index",
+    "i-row": "./components/iview/row/index",
+    "i-col": "./components/iview/col/index",
+    "i-icon": "./components/iview/icon/index",
+    "i-cell-group": "./components/iview/cell-group/index",
+    "i-cell": "./components/iview/cell/index",
+    "i-notice-bar": "./components/iview/notice-bar/index",
+    "i-message": "./components/iview/message/index",
+    "i-spin": "./components/iview/spin/index",
+    "i-card": "./components/iview/card/index",
+    "i-modal": "./components/iview/modal/index",
+    "i-input": "./components/iview/input/index"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   }
 }

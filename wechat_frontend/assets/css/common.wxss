@@ -1,1 +1,14 @@
 /* common style */
+.ye-text-center{
+  text-align: center;
+}
+.ye-f-12{
+  font-size: 12rpx;
+}
+
+.ye-h-10{
+  height: 10rpx;
+}
+.ye-h-20{
+  height: 10rpx;
+}

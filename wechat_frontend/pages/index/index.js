@@ -2,11 +2,11 @@
 //获取应用实例
 const app = getApp()
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
+const { $Message } = require('../../components/iview/base/index');
 
 Page({
   data: {
-    userInfo: {},
-    hasUserInfo: false,
+    spinStatus: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     imgUrls: [
       '/assets/imgs/home.png',
@@ -35,15 +35,31 @@ Page({
     })
   },
   onLoad: function () {
+    // setTimeout(()=>{
+    //   this.setData({
+    //     spinStatus: false
+    //   })
+    //   $Message({
+    //     content: '什么鬼？？？'
+    //   });
+    // },3000)
+
+    // app.YeApis.getInit().then(res => {
+    //   console.log('res:',res)
+    // },err => {
+    //   console.log('error',err)
+    // });
+
+    // app.YeApis.GET('/api/index/index').then(res=>{
+    //   console.log('res1:', res)
+    // })
+
     var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
-          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
-        });
-      }
-    })
+    // wx.getSystemInfo({
+    //   success: function (res) {
+    //     console.log('systeminfo:', res)
+    //   }
+    // })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -70,6 +86,9 @@ Page({
         }
       })
     }
+  },
+  onReady:function(){
+    console.log('onready')
   },
   getUserInfo: function(e) {
     console.log(e)

@@ -6,14 +6,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-    aa: {}
+    name: '',
+    userInfo: null,
+    visible: false,
+    desc: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app)
+    wx.getStorage({
+      key: 'userInfo',
+      success: res => {
+        this.setData({
+          userInfo: res.data
+        })
+      }
+    })
+
+    this.setData({
+      name: app.globalData.config.APP_NAME
+    })
+
+    console.log('options:', options)
   },
 
   /**
@@ -27,19 +43,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(app)
-    wx.request({
-      url: 'https://wechat.yexk.cn/api/index/index', //仅为示例，并非真实的接口地址
-      data: {
-        x: 'a',
-        y: 'a'
-      },
-      success: res => {
-        this.setData({
-          aa: res.data
-        });
-      }
-    })
   },
 
   /**
@@ -74,6 +77,41 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    console.log('分享')
+  },
+
+  getUserInfo:function(user_info){
+    console.log('user_info:', user_info.detail.userInfo)
+    
+    wx.setStorage({
+      key: 'userInfo',
+      data: user_info.detail.userInfo
+    })
+
+    this.setData({
+      userInfo: user_info.detail.userInfo
+    })
+  },
+
+  clickDesc(){
+    this.setData({
+      visible: true
+    })
+  },
+
+  handleClose(e){
+    if (e.type == 'ok') {
+      app.YeApis.POST('/api/user/info', { 'name': this.desc}).then(res => {
+        console.log('提交成功！')
+        this.setData({
+          visible: false
+        })  
+      })
+    } else {
+      this.setData({
+        visible: false
+      })
+    }
   }
+  
 })

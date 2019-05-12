@@ -1,20 +1,29 @@
 {
 	"description": "项目配置文件。",
 	"packOptions": {
-		"ignore": []
+		"ignore": [
+			{
+				"type": "suffix",
+				"value": ".back"
+			}
+		]
 	},
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"nodeModules": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.1.1",
+	"libVersion": "2.6.6",
 	"appid": "wx001ac5e03313aa3c",
 	"projectname": "%E6%99%93%E5%8A%A9%E6%89%8B125",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
